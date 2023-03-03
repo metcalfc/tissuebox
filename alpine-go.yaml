@@ -1,0 +1,8 @@
+include: alpine-dev.yaml
+
+contents:
+  repositories:
+    - https://dl-cdn.alpinelinux.org/alpine/edge/community
+
+  packages:
+    - go
