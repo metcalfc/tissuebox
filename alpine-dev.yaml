@@ -1,0 +1,46 @@
+include: alpine-base.yaml
+
+contents:
+  repositories:
+    - https://dl-cdn.alpinelinux.org/alpine/edge/main
+    - https://dl-cdn.alpinelinux.org/alpine/edge/community
+
+  packages:
+    - bash
+    - coreutils
+    - curl
+    - emacs
+    - fish
+    - git
+    - git-lfs
+    - grep
+    - jq
+    - less
+    - nano
+    - screen
+    - sed
+    - tmux
+    - vim
+    - wget
+    - yq
+    - zsh
+
+work-dir: /home/dev
+
+accounts:
+  groups:
+    - groupname: dev 
+      gid: 1000
+  users:
+    - username: dev
+      uid: 1000
+  run-as: dev
+
+cmd: /bin/bash -l
+
+archs:
+  - amd64
+
+# optional environment configuration
+environment:
+  PATH: /usr/sbin:/sbin:/usr/bin:/bin
